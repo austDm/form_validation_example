@@ -1,0 +1,16 @@
+.main {
+  .flex-box-mixin;
+  flex-direction: @flex-column;
+  width: @mainWidth;
+  user-select: @userSelectNone;
+
+  &-title {
+    .set-font-style("Roboto-Light", @mainTitleFontSize, @mainTitleLineHeight, @mainTextColor);
+
+    margin: @noIndent;
+    padding: @mainTitleInsideIndent;
+    text-align: @textAlignCenter;
+    font-weight: @fontLighter;
+    z-index: @zIndexThree;
+  }
+}

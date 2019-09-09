@@ -1,0 +1,70 @@
+.price_calculation-header {
+  .flex-box-mixin(@flex-between, @flex-start);
+  .set-font-style("Roboto-Light", @priceCalculationHeaderFontSize, @priceCalculationHeaderLineHeight, @mainTextColor);
+
+  width: @priceCalculationWidth;
+}
+
+.price-calculation {
+  .flex-box-mixin(@flex-between, @flex-center);
+
+  font-family: "Roboto-Light", sans-serif;
+  height: @priceCalculationHeight;
+  width: @priceCalculationWidth;
+  padding: @priceCalculationPadding;
+
+  &__firm {
+    .flex-box-mixin;
+    font-size: @priceCalculationFirmFontSize;
+    font-weight: @fontBold;
+    color: @mainTextColor;
+    width: @priceCalculationFirmWidth;
+  }
+
+  &__price {
+    .flex-box-mixin(@flex-center, @flex-start);
+
+    width: @priceCalculationPriceWidth;
+    color: @mainTextColor;
+  }
+
+  &__currency {
+    font-size: @priceCalculationCurrencyFontSize;
+    line-height: @priceCalculationCurrencyLineHeight;
+    font-weight: @fontBold;
+    margin-right: @priceCalculationCurrencyIndent;
+  }
+
+  &__integer {
+    font-size: @priceCalculationPriceIntegerFontSize;
+    line-height: @priceCalculationPriceIntegerFontSize;
+    margin-left: @priceCalculationCurrencyIntegerIndent;
+  }
+
+  &__fractional {
+    font-size: @priceCalculationPriceFractionalFontSize;
+  }
+
+  &__duration {
+    .flex-box-mixin(@flex-center, @flex-start);
+
+    width: @priceCalculationDurationWidth;
+  }
+
+  &__days {
+    font-size: @priceCalculationDurationDaysFontSize;
+  }
+
+  &__days-text {
+    font-size: @priceCalculationDurationDaysTextFontSize;
+    margin-left: @priceCalculationCurrencyIntegerIndent;
+  }
+
+  &__error {
+    .set-font-style("Roboto-Light", @priceCalculationFirmFontSize, @priceCalculationErrorMessageLineHeight, @mainTextColor);
+    .flex-box-mixin;
+
+    width: @priceCalculationErrorMessageWidth;
+    font-weight: @fontBold;
+  }
+}

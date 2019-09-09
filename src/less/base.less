@@ -1,0 +1,34 @@
+* {
+  box-sizing: @boxSizingBorderBox;
+  text-decoration: @noTextDecoration;
+}
+
+html {
+  font-size: @htmlFontSize;
+}
+
+body {
+  .flex-box-mixin(@flex-center, @flex-start);
+
+  margin: @noIndent;
+  padding: @noIndent;
+  position: @positionRelative;
+  min-width: @mainWidth;
+  min-height: @bodyMinHeight;
+  background: @bodyBackground;
+  background-size: @backgroundCover;
+}
+
+label {
+  cursor: @cursorPointer;
+}
+
+ul {
+  margin: @noIndent;
+  padding: @noIndent;
+}
+
+input:focus {
+  outline: @appearanceOutlineNone;
+  background: @inputOpacityFocusBackground;
+}

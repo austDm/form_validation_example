@@ -1,0 +1,145 @@
+.form {
+  .set-font-style("Roboto-Light", 1.4rem, 2.4rem, @mainTextColor);
+
+  padding: @formIndent;
+
+  &__location-container,
+  &__package-parameters-container {
+    .flex-box-mixin(@flex-between, @flex-start);
+
+    padding: @formVerticalContainersIndent;
+  }
+
+  &__location-container {
+    padding-bottom: @formContainerIndent;
+  }
+
+  &__package-parameters-container {
+    margin-top: @formContainerIndent;
+  }
+
+  &__city-container {
+    position: @positionRelative;
+  }
+
+  &__country-container,
+  &__package-weight-container {
+    .select-pointer-mixin;
+
+    position: @positionRelative;
+    margin-right: @formContainerIndent;
+  }
+
+  &__country-input {
+    cursor: @cursorPointer;
+  }
+
+  &__country-label,
+  &__city-label,
+  &__package-weight-label {
+    .flex-box-mixin(@flex-start);
+
+    height: @formLabelHeight;
+    margin-left: @formLabelIndent;
+  }
+
+  &__package-weight-unit-click-area {
+    .flex-box-mixin(@flex-start);
+
+    position: @positionAbsolute;
+    top: @formWeightClickAreaTop;
+    right: @formWeightClickAreaRight;
+    height: @formWeightClickAreaHeight;
+    padding: @formWeightClickAreaIndent;
+    cursor: @cursorPointer;
+    z-index: @zIndexFive;
+  }
+
+  &__package-size-container{
+    width: @formSizeContainerWidth;
+  }
+
+  &__package-size-input-settings {
+    .flex-box-mixin(@flex-between);
+
+    height: @formSizeInputSettingsHeight;
+
+    &-hide-menu {
+      .flex-box-mixin;
+    }
+
+    &-text {
+      margin-right: @formSizeInputSettingsIndent;
+    }
+
+    &-size-unit-switch-block {
+      .flex-box-mixin;
+      .white-border-mixin(1px);
+
+      label {
+        .flex-box-mixin;
+
+        padding: @formSizeInputSettingsLabelIndent;
+        height: @formSizeInputSettingsLabelHeight;
+      }
+    }
+  }
+
+  &__package-size-input-settings-inch-radio:checked + .form__package-size-input-settings-label,
+  &__package-size-input-settings-sm-radio:checked + .form__package-size-input-settings-label {
+    background: @mainTextColor;
+    color: @formCustomCheckBoxMarkColor;
+  }
+
+  &__package-size-input-settings-size-switch-block {
+    .flex-box-mixin(@flex-between);
+  }
+
+  &__package-size-input-settings-turn-on-box {
+    .white-border-mixin;
+
+    width: @formSizeInputSettingsTurnOnBoxSize;
+    height: @formSizeInputSettingsTurnOnBoxSize;
+    margin-left: @formSizeInputSettingsTurnOnBoxIndent;
+    transition: @customCheckboxTransition;
+  }
+
+  &__package-size-input-settings-checkbox:checked + &__package-size-input-settings-turn-on-box {
+    .flex-box-mixin(@flex-center, @flex-start);
+    .custom-checkbox-mark-mixin;
+
+    box-shadow: @customCheckboxBoxShadow;
+    padding-top: @formSizeInputSettingsTurnOnBoxCheckedIndent;
+  }
+
+  &__package-size-input {
+    width: @formSizeInputWidth;
+
+    &-container {
+      .flex-box-mixin(@flex-between, @flex-start);
+
+      width: @formSizeInputContainerWidth;
+    }
+
+    &-block {
+      position: @positionRelative;
+      width: @formSizeInputWidth;
+    }
+
+    &-label {
+      position: @positionAbsolute;
+      width: @formSizeInputWidth;
+      height: @formSizeInputLabelHeight;
+      top: @noIndent;
+      cursor: @cursorText;
+    }
+
+    &-unit {
+      .flex-box-mixin(@flex-center, @flex-start);
+      position: @positionAbsolute;
+      top: @formSizeInputSizeUnitTop;
+      right: @formSizeInputSizeUnitRight;
+      cursor: @cursorText;
+    }
+  }
+}

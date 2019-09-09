@@ -1,0 +1,31 @@
+.form__country-input,
+.form__city-input,
+.form__package-weight-input,
+.form__package-size-input {
+  .set-font-style("Roboto-Light", @formTextInputFontSize, @formTextInputLineHeight, @mainTextColor);
+
+  height: @formTextInputsHeight;
+  background: @transparent;
+  padding-left: @formTextInputsIndent;
+
+  &::placeholder {
+    color: darken(@mainTextColor, 30%);
+  }
+}
+
+.form__package-weight-input {
+  padding-right: @formWeightInputIndent;
+}
+
+.form__package-size-input {
+  padding-right: @formSizeInputIndent;
+}
+
+.form__country-input,
+.form__package-weight-input {
+  width: @formCountrySelectListWidth;
+}
+
+.form__city-input {
+  width: @formCitySelectListWidth;
+}

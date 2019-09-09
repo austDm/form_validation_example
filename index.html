@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delivery time and cost</title>
+</head>
+<body>
+  <div class="birds"></div>
+  <main class="main">
+    <h1 class="main-title">Стоимость доставки товаров из США на маленьком нелегальном кораблике</h1>
+    <form class="form">
+      <div class="form__location-container">
+        <div class="form__country-container">
+          <div class="form__country-label">Ваша страна</div>
+          <input class="form__country-input white-border" type="text" name="country" id="form__country-input" autocomplete="off" readonly>
+          <ul class="form__country-select-list"></ul>
+        </div>
+        <div class="form__city-container">
+          <div class="form__city-label">Ваш город</div>
+          <input class="form__city-input white-border" data-id="city" type="text" name="country" placeholder="Введите город" id="form__city-input" autocomplete="off">
+          <ul class="form__city-select-list"></ul>
+          <div class="form__city-input-error-container"></div>
+        </div>
+      </div>
+      <div class="form__package-parameters-container">
+        <div class="form__package-weight-container">
+          <div class="form__package-weight-label">Вес посылки</div>
+          <input class="form__package-weight-input white-border" data-id="weight" type="text" id="form__package-weight-input" placeholder="Введите массу посылки!" autocomplete="off">
+          <div class="form__package-weight-unit-click-area"></div>
+          <ul class="form__package-weight-unit-select-list"></ul>
+          <input class="form__package-weight-input-range" type="range">
+          <div class="form__weight-input-error-container"></div>
+        </div>
+        <div class="form__package-size-container">
+          <div class="form__package-size-input-settings">
+            <div class="form__package-size-input-settings-hide-menu hide-block">
+              <span class="form__package-size-input-settings-text">Габариты посылки в</span>
+              <div class="form__package-size-input-settings-size-unit-switch-block">
+                <input class="form__package-size-input-settings-inch-radio" id="form__package-size-input-settings-inch-radio" type="radio" name="size-unit" data-id="in" hidden>
+                <label class="form__package-size-input-settings-label form__package-size-input-settings-label--inch" for="form__package-size-input-settings-inch-radio">дюймах</label>
+                <input class="form__package-size-input-settings-sm-radio" id="form__package-size-input-settings-sm-radio" type="radio" name="size-unit" data-id="см" hidden>
+                <label class="form__package-size-input-settings-label form__package-size-input-settings-label--sm" for="form__package-size-input-settings-sm-radio">см</label>
+              </div>
+            </div>
+            <div class="form__package-size-input-settings-size-switch-block">
+              <label class="form__package-size-input-settings-turn-on" for="form__package-size-input-settings-checkbox">Учитывать объемный вес</label>
+              <input class="form__package-size-input-settings-checkbox" id="form__package-size-input-settings-checkbox" type="checkbox" hidden>
+              <label class="form__package-size-input-settings-turn-on-box" for="form__package-size-input-settings-checkbox"></label>
+            </div>
+          </div>
+          <div class="form__package-size-input-container hide-block">
+            <div class="form__package-size-input-block">
+              <input class="form__package-size-input form__package-size-input--length white-border" data-id="length" id="form__package-size-input--length" type="text" name="length" placeholder="Длина" autocomplete="off">
+              <label for="form__package-size-input--length" class="form__package-size-input-unit" data-id="length"></label>
+              <input  class="form__package-size-input-range form__package-size-input-range--length" data-id="length" type="range" min="1" max="100" step="1" value="50">
+              <div class="form__length-input-error-container" data-id="length"></div>
+            </div>
+            <div class="form__package-size-input-block">
+              <input class="form__package-size-input form__package-size-input--height white-border" data-id="height" id="form__package-size-input--height" type="text" name="height" placeholder="Высота" autocomplete="off">
+              <label for="form__package-size-input--height" class="form__package-size-input-unit" data-id="height"></label>
+              <input  class="form__package-size-input-range form__package-size-input-range--height" data-id="height" type="range" min="1" max="100" step="1" value="50">
+              <div class="form__height-input-error-container" data-id="height"></div>
+            </div>
+            <div class="form__package-size-input-block">
+              <input class="form__package-size-input form__package-size-input--width white-border" data-id="width" id="form__package-size-input--width" type="text" name="width" placeholder="Ширина" autocomplete="off">
+              <label class="form__package-size-input-unit" for="form__package-size-input--width" data-id="width"></label>
+              <input  class="form__package-size-input-range form__package-size-input-range--width" data-id="width" type="range" min="1" max="100" step="1" value="50">
+              <div class="form__width-input-error-container" data-id="width"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="roundabout-switch-block">
+      <label class="roundabout-switch-block__turn-on" for="roundabout-switch-block__checkbox">Сравнить массу посылки с массой одного из наших сотрудников</label>
+      <input class="roundabout-switch-block__checkbox" id="roundabout-switch-block__checkbox" type="checkbox" hidden checked>
+      <label class="roundabout-switch-block__turn-on-box" for="roundabout-switch-block__checkbox"></label>
+    </div>
+    <div class="roundabout">
+      <div class="roundabout__list-container">
+        <ul class="roundabout__list" data-list-order="2"></ul>
+      </div>
+    </div>
+    <div class="price_calculation-header">
+      <span>Название кораблика</span>
+      <span>Цена</span>
+      <span>Длительность</span>
+    </div>
+    <div class="price-calculation-container"></div>
+    <div class="price-calculation-container"></div>
+  </main>
+  <script src="dist/js/main.js"></script>
+</body>
+</html>

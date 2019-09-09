@@ -1,0 +1,84 @@
+.add-font(@font-url, @font-name, @font-weight: normal, @font-style:normal) {
+  font-family: @font-name;
+  src:url("@{font-folder}@{font-url}.woff") format("woff"),
+      url("@{font-folder}@{font-url}.ttf") format("truetype"),
+      url("@{font-folder}@{font-url}.eot");
+  font-weight: normal;
+}
+
+.set-font-style(@font-family, @font-size:inherit, @line-height:inherit, @color: inherit, @text-transform:none) {
+  font-family: @font-family, sans-serif;
+  font-size: @font-size;
+  line-height: @line-height;
+  color: @color;
+  text-transform: @text-transform;
+}
+
+.flex-box-mixin(@justify:@flex-center, @align:@flex-center) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+
+.list-noStyle {
+  .noIndent;
+  list-style: none;
+}
+
+.noIndent {
+  margin: 0;
+  padding: 0;
+}
+
+.select-pointer-mixin {
+  &:after {
+    content: '';
+    position: absolute;
+    top: 4.8rem;
+    right: 2rem;
+    width: 0;
+    height: 0;
+    border-left: 0.6rem solid transparent;
+    border-right: 0.6rem solid transparent;
+    border-top: 0.6rem solid @mainTextColor;
+    cursor: pointer;
+  }
+}
+
+.hide-block {
+  visibility: hidden;
+}
+
+.white-border-mixin(@thickness:2px) {
+  border: @thickness solid @mainTextColor;
+  border-radius: 0.2rem;
+}
+
+.white-border {
+  .white-border-mixin;
+}
+
+.no-border {
+  border: none;
+}
+
+.error-input-border {
+  .white-border-mixin;
+  border-color: @errorColor;
+}
+
+.custom-checkbox-mark-mixin {
+  &:after {
+    content: '';
+    display: block;
+    width: @customCheckBoxMarkWidth;
+    height: @customCheckBoxMarkHeight;
+    top: @halfIndent;
+    left: @halfIndent;
+    transform: @rotateQuarter;
+    border-width: @customCheckBoxBorderWidth;
+    border-color: @formCustomCheckBoxMarkColor;
+    border-style: @borderSolid;
+  }
+}
